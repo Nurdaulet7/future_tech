@@ -1,2 +1,3 @@
-const fullname = "Alex";
-console.log(fullname);
+import Header from "./Header.js";
+
+new Header();
