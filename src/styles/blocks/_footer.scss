@@ -11,7 +11,7 @@
   &__menu {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    align-items: flex-start;
+    align-items: start;
     column-gap: fluid(80, 20);
 
     @include tablet {
