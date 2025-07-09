@@ -252,6 +252,7 @@ svg * {
   --container-width: 100rem;
   --container-padding-x: 1rem;
   --transition-duration: 0.2s;
+  --100vw: calc(100vw - var(--scrollbar-width));
 }
 @media (width <= 90rem) {
   :root {
@@ -297,7 +298,7 @@ svg * {
 .full-vw-line::before,
 .full-vw-line::after {
   position: absolute;
-  width: calc((100vw - var(--container-width)) / 2);
+  width: calc((var(--100vw) - var(--container-width)) / 2);
   height: 0.0625rem;
   background-color: var(--color-dark-15);
 }
@@ -1037,7 +1038,7 @@ button[aria-label]::before {
 }
 @media (width <= 63.9375rem) {
   .hero__metrics::before {
-    width: 100vw;
+    width: var(--100vw);
     right: calc(var(--container-padding-x) * -1);
   }
 }
@@ -1063,7 +1064,7 @@ button[aria-label]::before {
 }
 @media (width <= 63.9375rem) {
   .hero__resources-preview {
-    width: 100vw;
+    width: var(--100vw);
     margin-left: calc(var(--container-padding-x) * -1);
     padding: 6.25rem 2.5rem 2.5rem;
     background-image: url("../images/resources-preview/bg_tablet.png");
@@ -1560,7 +1561,7 @@ button[aria-label]::before {
     translate: -50% 0;
     content: "";
     bottom: 0;
-    width: 100vw;
+    width: var(--100vw);
     height: 0.0625rem;
     background-color: var(--color-dark-15);
   }
@@ -1639,6 +1640,14 @@ button[aria-label]::before {
   padding-top: clamp(1.875rem, 1.472107438rem + 1.652892562vw, 3.125rem);
   color: var(--color-light);
   text-align: center;
+  background-color: var(--color-dark-10);
+  border-radius: 0.75rem;
+  border: var(--border);
+}
+@media (width <= 47.9375rem) {
+  .review-card__body {
+    border-radius: 0.625rem;
+  }
 }
 .review-card__rating-view {
   position: absolute;
@@ -1744,10 +1753,4 @@ button[aria-label]::before {
   .about__list {
     grid-template-columns: repeat(3, 1fr);
   }
-}
-
-.header,
-main > *:not(:last-child),
-.footer {
-  display: none !important;
 } /*# sourceMappingURL=main.css.map */
