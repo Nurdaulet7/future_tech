@@ -1,0 +1,42 @@
+@use "../helpers" as *;
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: rem(40);
+  max-width: rem(500);
+  margin-inline: auto;
+
+  @include laptop {
+    row-gap: rem(30);
+  }
+
+  &__author {
+    --imageSize: #{rem(60)};
+
+    @include laptop {
+      --imageSize: #{rem(50)};
+    }
+  }
+
+  &__body {
+    position: relative;
+    padding: fluid(30, 20);
+    padding-top: fluid(50, 30);
+    color: var(--color-light);
+    text-align: center;
+    background-color: var(--color-dark-10);
+    border-radius: rem(12);
+    border: var(--border);
+
+    @include mobile {
+      border-radius: rem(10);
+    }
+  }
+
+  &__rating-view {
+    @include abs-center;
+    top: 0;
+  }
+}
